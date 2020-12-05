@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import {connect} from "react-redux";
+import {useState} from "react";
+import Panel from "./Panel";
+import {Col, Container, Row} from "reactstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+function App(props) {
+
+  const [inputValue, setInputValue] = useState('');
+
+  const addButtonHandler = () => {
+    props.addCard(inputValue);
+    setInputValue('')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Row className='mb-4'>
+        <Col sm={6}>
+          <input
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <button onClick={addButtonHandler}>Add card</button>
+        </Col>
+      </Row>
+      <div>
+        <Panel />
+      </div>
+    </Container>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  cards: state.cards,
+  status: state.status
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  addCard: (input) => dispatch({type: 'CARD_ADD', payload: input}),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
