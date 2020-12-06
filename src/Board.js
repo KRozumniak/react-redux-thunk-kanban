@@ -1,29 +1,41 @@
-import CardItem from "./CardItem";
-import {connect} from 'react-redux';
-import {Col} from "reactstrap";
+import Column from "./Column";
+import {Row} from "reactstrap";
+import {getCards, getColumns} from "./redux/action";
+import {connect} from "react-redux";
+import {useEffect} from "react";
 
 function Board(props) {
 
-  const {cards = []} = props;
+  const {cards = [], columns = []} = props;
+  console.log(props)
+
+  useEffect(() => {
+    props.getColumns();
+    props.getCards();
+  }, [])
 
   return (
-    <Col>
-      <h3 className={`p-2 m-2 border border-secondary`}>{props.status}</h3>
-      {cards
-        .filter(task => task.status === props.status)
-        .map(task =>
-            <CardItem
-              task={task}
-              key={task.id}
-              id={task.id}
-            />
-        )}
-    </Col>
+    <Row>
+      {columns.map(el =>
+        <Column
+          key={el._id}
+          cards={cards}
+          column={el}
+        />
+      )}
+
+    </Row>
   );
 }
 
 const mapStateToProps = (state) => ({
   cards: state.cards,
+  columns: state.columns
 })
 
-export default connect(mapStateToProps)(Board);
+const mapDispatchToProps = (dispatch) => ({
+  getColumns: () => dispatch(getColumns()),
+  getCards: () => dispatch(getCards()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Board);

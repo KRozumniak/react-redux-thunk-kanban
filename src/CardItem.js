@@ -1,36 +1,41 @@
 import {connect} from "react-redux";
 import {useState} from 'react';
 import {CardTitle, Card, CardText, Col} from "reactstrap";
+import {deleteCard} from "./redux/action";
 
 function CardItem(props) {
 
+  const {card} = props;
+
   const [newTitle, setNewTitle] = useState('');
   const [editMode, setEditMode] = useState(false);
-
-  const editButtonHandler = () => {
-    props.editCard(newTitle, props.id)
-    setNewTitle('')
-  }
-
-  const deleteButtonHandler = () => {
-    props.deleteCard(props.id)
-  }
+  //
+  // const editButtonHandler = () => {
+  //   props.editCard(newTitle, props.id)
+  //   setNewTitle('')
+  // }
+  //
+  // const deleteButtonHandler = () => {
+  //   props.deleteCard(props.id)
+  // }
 
   return (
     <Col>
       <Card body>
-        <CardTitle tag="h5">{props.task.title}</CardTitle>
+        <CardTitle>
+          {card.name}</CardTitle>
         <CardText>
-          {props.task.status !== 'todo' && <button onClick={() => props.moveCard(props.id, -1)}>Left</button>}
-          {props.task.status !== 'done' && <button onClick={() => props.moveCard(props.id, 1)}>Right</button>}
+          {card.description}
+          {/*{props.task.status !== 'todo' && <button onClick={() => props.moveCard(props.id, -1)}>Left</button>}*/}
+          {/*{props.task.status !== 'done' && <button onClick={() => props.moveCard(props.id, 1)}>Right</button>}*/}
         </CardText>
         {!editMode && <button onClick={() => setEditMode(!editMode)}>Edit</button>}
+            <button onClick={() => props.deleteCard(card._id)}>Delete</button>
         <CardText>
           {editMode &&
           <>
             <button onClick={() => setEditMode(!editMode)}>Cancel</button>
-            <button onClick={deleteButtonHandler}>Delete</button>
-            <button onClick={editButtonHandler}>Save</button>
+            <button>Save</button>
           </>
           }
         </CardText>
@@ -45,15 +50,8 @@ function CardItem(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  cards: state.cards
-})
-
 const mapDispatchToProps = (dispatch) => ({
-  editCard: (title, id) => dispatch({type: 'CARD_EDIT', payload: title, taskId: id}),
-  deleteCard: (id) => dispatch({type: 'CARD_DELETE', payload: id}),
-  moveCard: (id, value) => dispatch({type: 'CARD_MOVE', payload: {value, id}}),
+  deleteCard: (cardId) => dispatch(deleteCard(cardId))
 })
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(CardItem);
+export default connect(null, mapDispatchToProps)(CardItem);
