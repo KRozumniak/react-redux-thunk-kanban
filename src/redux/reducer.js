@@ -1,10 +1,4 @@
 const initialState = {
-  // statuses: [
-  //   'todo',
-  //   'progress',
-  //   'review',
-  //   'done',
-  // ],
   cards: [],
   columns: []
 };
