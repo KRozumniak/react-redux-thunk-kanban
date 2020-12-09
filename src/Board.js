@@ -1,8 +1,8 @@
 import Column from "./Column";
-import {Row} from "reactstrap";
-import {getCards, getColumns} from "./redux/action";
+import {Col, Row} from "reactstrap";
+import {addCard, getCards, getColumns} from "./redux/action";
 import {connect} from "react-redux";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 function Board(props) {
 
@@ -16,6 +16,7 @@ function Board(props) {
 
   return (
     <Row>
+
       {columns.map(el =>
         <Column
           key={el._id}
@@ -36,6 +37,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getColumns: () => dispatch(getColumns()),
   getCards: () => dispatch(getCards()),
+  addCard: (input) => dispatch(addCard(input))
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);

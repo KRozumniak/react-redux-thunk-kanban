@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import {useState} from 'react';
 import {CardTitle, Card, CardText, Col} from "reactstrap";
-import {deleteCard} from "./redux/action";
+import {deleteCard, editCard} from "./redux/action";
 
 function CardItem(props) {
 
@@ -9,15 +9,11 @@ function CardItem(props) {
 
   const [newTitle, setNewTitle] = useState('');
   const [editMode, setEditMode] = useState(false);
-  //
-  // const editButtonHandler = () => {
-  //   props.editCard(newTitle, props.id)
-  //   setNewTitle('')
-  // }
-  //
-  // const deleteButtonHandler = () => {
-  //   props.deleteCard(props.id)
-  // }
+
+  const editButtonHandler = () => {
+    props.editCard(newTitle, props._id)
+    setNewTitle('')
+  }
 
   return (
     <Col>
@@ -35,7 +31,7 @@ function CardItem(props) {
           {editMode &&
           <>
             <button onClick={() => setEditMode(!editMode)}>Cancel</button>
-            <button>Save</button>
+            <button onClick={editButtonHandler}>Save</button>
           </>
           }
         </CardText>
@@ -51,7 +47,8 @@ function CardItem(props) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  deleteCard: (cardId) => dispatch(deleteCard(cardId))
+  deleteCard: (cardId) => dispatch(deleteCard(cardId)),
+  editCard: (newTitle, cardId) => dispatch(editCard(newTitle, cardId))
 })
 
 export default connect(null, mapDispatchToProps)(CardItem);

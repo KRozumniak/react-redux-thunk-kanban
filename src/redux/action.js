@@ -46,3 +46,51 @@ export function deleteCard(cardId) {
       })
   }
 }
+
+export function addCard(input) {
+
+  const newTask = {
+    name: 'KR',
+    description: input,
+    status: 'done',
+    priority: 0,
+  }
+
+  return (dispatch) => {
+    axios.post(`https://nazarov-kanban-server.herokuapp.com/card/`, newTask)
+      .then(res => {
+        dispatch(
+          getCards()
+        )
+      })
+      .catch((err) => {
+        //handle server
+        console.log(err)
+      })
+  }
+}
+
+export function editCard(newTitle, cardId) {
+
+  console.log('EDIT:', cardId)
+  //I STOPPED HERE: SETTING EDITING CARD'S DESCRIPTION IN ACTION.JS REDUCER.JS CARDITEM.JS
+
+  return (dispatch) => {
+    axios.put(`https://nazarov-kanban-server.herokuapp.com/card/${cardId}`)
+      .then(res => {
+        dispatch(
+          {
+            type: 'EDIT_CARD',
+            payload: newTitle,
+            cardId: cardId,
+          },
+          getCards()
+        )
+      })
+      .catch((err) => {
+        console.log('NOT EDITED')
+        console.log(err)
+      })
+  }
+}
+

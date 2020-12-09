@@ -12,6 +12,23 @@ const cards = (state = initialState, action) => {
     case 'SET_CARDS':
       return {...state, cards: action.payload}
 
+    case 'EDIT_CARD':
+      const newCards = state.cards.map(card => {
+        if (card.id === action.cardId) return {
+          ...card, description: action.payload
+        };
+        return card;
+      })
+      return {
+        ...state,
+        cards: [...newCards]
+      }
+
+    // case 'ADD_CARD':
+    //   return {
+    //     ...state,
+    //     cards: [...state.cards, {description: action.payload, status: 'done', name: 'default name', _id: Math.random()}]
+    //   }
     default:
       return state;
   }
