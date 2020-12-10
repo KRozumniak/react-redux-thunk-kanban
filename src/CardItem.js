@@ -6,12 +6,14 @@ import {deleteCard, editCard} from "./redux/action";
 function CardItem(props) {
 
   const {card} = props;
-  const [newTitle, setNewTitle] = useState('');
+  const [input, setInput] = useState('');
   const [editMode, setEditMode] = useState(false);
 
   const editButtonHandler = () => {
-    props.editCard(newTitle, props._id)
-    setNewTitle('')
+    props.editCard(input, card._id)
+    setInput('')
+    setEditMode(!editMode)
+    console.log(input, card._id)
   }
 
   return (
@@ -36,8 +38,8 @@ function CardItem(props) {
         </CardText>
         <CardText>
           {editMode && <input
-            value={newTitle}
-            onChange={(e) => setNewTitle(e.target.value)}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
           />}
         </CardText>
       </Card>

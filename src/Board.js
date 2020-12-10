@@ -7,7 +7,6 @@ import {useEffect, useState} from "react";
 function Board(props) {
 
   const {cards = [], columns = []} = props;
-  console.log(props)
 
   useEffect(() => {
     props.getColumns();
