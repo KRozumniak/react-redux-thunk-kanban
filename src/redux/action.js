@@ -70,21 +70,18 @@ export function addCard(input) {
   }
 }
 
-export function editCard(newTitle, cardId) {
+export function editCard(input, cardId) {
 
   console.log('EDIT:', cardId)
   //I STOPPED HERE: SETTING EDITING CARD'S DESCRIPTION IN ACTION.JS REDUCER.JS CARDITEM.JS
 
   return (dispatch) => {
-    axios.put(`https://nazarov-kanban-server.herokuapp.com/card/${cardId}`)
+    axios.patch(`https://nazarov-kanban-server.herokuapp.com/card/${cardId}`)
       .then(res => {
-        dispatch(
-          {
+        dispatch({
             type: 'EDIT_CARD',
-            payload: newTitle,
-            cardId: cardId,
-          },
-          getCards()
+            payload: {input, cardId},
+          }, getCards()
         )
       })
       .catch((err) => {
