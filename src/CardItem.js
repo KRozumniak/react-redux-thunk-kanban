@@ -6,7 +6,6 @@ import {deleteCard, editCard} from "./redux/action";
 function CardItem(props) {
 
   const {card} = props;
-
   const [newTitle, setNewTitle] = useState('');
   const [editMode, setEditMode] = useState(false);
 
