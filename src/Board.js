@@ -1,8 +1,8 @@
 import Column from "./Column";
-import {Col, Row} from "reactstrap";
+import {Row} from "reactstrap";
 import {addCard, getCards, getColumns} from "./redux/action";
 import {connect} from "react-redux";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 
 function Board(props) {
 
