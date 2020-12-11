@@ -33,7 +33,6 @@ function AddCard(props) {
 
 const mapDispatchToProps = (dispatch) => ({
   addCard: (input) => dispatch(addCard(input))
-
 })
 
 export default connect(null, mapDispatchToProps)(AddCard);
