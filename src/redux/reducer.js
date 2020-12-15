@@ -24,11 +24,13 @@ const cards = (state = initialState, action) => {
         cards: [...newCards]
       }
 
+
     // case 'ADD_CARD':
     //   return {
     //     ...state,
     //     cards: [...state.cards, {description: action.payload, status: 'done', name: 'default name', _id: Math.random()}]
     //   }
+
 
     default:
       return state;
