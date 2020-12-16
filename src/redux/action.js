@@ -76,6 +76,7 @@ export function editCard(input, cardId) {
     axios.patch(`https://nazarov-kanban-server.herokuapp.com/card/${cardId}`, {name: input})
       .then(res => {
         dispatch(getCards())
+        console.log(res)
         // dispatch({
         //     type: 'EDIT_CARD',
         //     payload: {input, cardId},
