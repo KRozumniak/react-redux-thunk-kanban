@@ -73,13 +73,14 @@ export function addCard(input) {
 export function editCard(input, cardId) {
 
   return (dispatch) => {
-    axios.patch(`https://nazarov-kanban-server.herokuapp.com/card/${cardId}`)
+    axios.patch(`https://nazarov-kanban-server.herokuapp.com/card/${cardId}`, {name: input})
       .then(res => {
-        dispatch({
-            type: 'EDIT_CARD',
-            payload: {input, cardId},
-          }, getCards()
-        )
+        dispatch(getCards())
+        // dispatch({
+        //     type: 'EDIT_CARD',
+        //     payload: {input, cardId},
+        //   }, getCards()
+        // )
       })
       .catch((err) => {
         console.log('NOT EDITED')

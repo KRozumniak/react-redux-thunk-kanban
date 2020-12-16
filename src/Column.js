@@ -6,8 +6,8 @@ function Column(props) {
   const {cards, column} = props;
 
   return (
-    <Col xs={3} style={{'border': '1px solid'}}>
-      <h3>{column.title}</h3>
+    <Col xs={2} style={{'border': '1px solid'}}>
+      <h3>{column.status}</h3>
       <h3>Column</h3>
       {cards.filter(el => el.status === column.status)
       .map(el =>

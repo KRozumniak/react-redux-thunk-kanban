@@ -11,18 +11,18 @@ const cards = (state = initialState, action) => {
 
     case 'SET_CARDS':
       return {...state, cards: action.payload}
-
-    case 'EDIT_CARD':
-      const newCards = state.cards.map(card => {
-        if (card.id === action.payload.cardId) return {
-          ...card, name: action.payload.input, status: 'review'
-        };
-        return card;
-      })
-      return {
-        ...state,
-        cards: [...newCards]
-      }
+    //
+    // case 'EDIT_CARD':
+    //   const newCards = state.cards.map(card => {
+    //     if (card.id === action.payload.cardId) return {
+    //       ...card, name: action.payload.input, status: 'review'
+    //     };
+    //     return card;
+    //   })
+    //   return {
+    //     ...state,
+    //     cards: [...newCards]
+    //   }
 
 
     // case 'ADD_CARD':
