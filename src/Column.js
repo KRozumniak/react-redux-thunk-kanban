@@ -9,12 +9,13 @@ function Column(props) {
     <Col xs={2} style={{'border': '1px solid'}}>
       <h3>{column.status}</h3>
       {cards.filter(el => el.status === column.status)
-      .map(el =>
-        <CardItem
-          key={el._id}
-          card={el}
-        />
-      )}
+        .sort((task1, task2) => task2.priority - task1.priority)
+        .map(el =>
+          <CardItem
+            key={el._id}
+            card={el}
+          />
+        )}
     </Col>
   );
 }

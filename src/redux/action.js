@@ -52,8 +52,8 @@ export function addCard(input) {
   const newTask = {
     name: 'KR',
     description: input,
-    status: 'done',
-    priority: 0,
+    status: 'review',
+    priority: 10,
   }
 
   return (dispatch) => {
@@ -90,3 +90,30 @@ export function editCard(input, cardId) {
   }
 }
 
+export function moveCard(newStatus, cardId) {
+
+  return (dispatch) => {
+    axios.patch(`https://nazarov-kanban-server.herokuapp.com/card/${cardId}`, {status: newStatus})
+      .then(res => {
+        dispatch(getCards())
+      })
+      .catch((err) => {
+        console.log('NOT EDITED')
+        console.log(err)
+      })
+  }
+}
+
+export function changePriority(value, cardId) {
+
+  return (dispatch) => {
+    axios.patch(`https://nazarov-kanban-server.herokuapp.com/card/${cardId}`, {priority: value})
+      .then(res => {
+        dispatch(getCards())
+      })
+      .catch((err) => {
+        console.log('NOT EDITED')
+        console.log(err)
+      })
+  }
+}

@@ -1,4 +1,4 @@
-import {addCard} from "./redux/action";
+import {addCard, deleteColumn} from "./redux/action";
 import {connect} from "react-redux";
 import {useState} from "react";
 import {Button, Col, Input, Row} from "reactstrap";

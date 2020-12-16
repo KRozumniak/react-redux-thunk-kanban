@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0325244-6c17-45c1-ae16-212af0de209d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AddCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ModalWindow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CardItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Column.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducer.js" afterDir="false" />
     </list>
@@ -35,7 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-redux-kanban" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -76,6 +76,13 @@
       <workItem from="1607205177875" duration="12373000" />
       <workItem from="1607297688191" duration="140000" />
       <workItem from="1607311149430" duration="5229000" />
+      <workItem from="1607481414886" duration="1338000" />
+      <workItem from="1607561954726" duration="715000" />
+      <workItem from="1607563175499" duration="4976000" />
+      <workItem from="1607647862946" duration="132000" />
+      <workItem from="1607733671329" duration="654000" />
+      <workItem from="1608062705942" duration="653000" />
+      <workItem from="1608083906593" duration="12972000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1607135570464</created>
@@ -112,7 +119,77 @@
       <option name="project" value="LOCAL" />
       <updated>1607297796249</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit">
+      <created>1607487521418</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607487521418</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Commit">
+      <created>1607562061738</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607562061738</updated>
+    </task>
+    <task id="LOCAL-00008" summary="updated redux">
+      <created>1607569908971</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607569908971</updated>
+    </task>
+    <task id="LOCAL-00009" summary="updated redux kanban">
+      <created>1607569925346</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607569925346</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Board update">
+      <created>1607647899409</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607647899409</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update">
+      <created>1607647983062</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607647983062</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Commit">
+      <created>1607733725043</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607733725043</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update reducer">
+      <created>1608062757023</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1608062757023</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Commit">
+      <created>1608089933042</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1608089933042</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Commit">
+      <created>1608091089992</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1608091089992</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +209,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit" />
+    <MESSAGE value="updated redux" />
+    <MESSAGE value="updated redux kanban" />
+    <MESSAGE value="Board update" />
+    <MESSAGE value="Update" />
+    <MESSAGE value="Update reducer" />
     <MESSAGE value="Commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
