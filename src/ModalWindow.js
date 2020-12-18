@@ -19,7 +19,6 @@ function ModalWindow(props) {
   const [modal, setModal] = useState(false);
   const [input, setInput] = useState('');
 
-
   const toggle = () => setModal(!modal);
 
   const editButtonHandler = () => {
@@ -40,7 +39,6 @@ function ModalWindow(props) {
 
     props.moveCard(changeStatus(status, value), card._id)
     toggle()
-
   }
 
   const priorityButtonHandler = (cardId, value) => {
