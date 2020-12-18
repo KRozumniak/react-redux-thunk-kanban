@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 
 function ModalWindow(props) {
 
-  const {card, columns} = props;
+  const {card} = props;
 
   const initColumns = [
     'todo',
@@ -37,6 +37,7 @@ function ModalWindow(props) {
     const changeStatus = (currentStatus, value) => {
       return initColumns[initColumns.indexOf(currentStatus) + value];
     }
+
     props.moveCard(changeStatus(status, value), card._id)
     toggle()
 
