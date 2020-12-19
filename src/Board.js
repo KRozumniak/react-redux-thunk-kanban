@@ -15,7 +15,6 @@ function Board(props) {
 
   return (
     <Row>
-
       {columns.map(el =>
         <Column
           key={el._id}
@@ -23,7 +22,6 @@ function Board(props) {
           column={el}
         />
       )}
-
     </Row>
   );
 }
