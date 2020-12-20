@@ -77,11 +77,6 @@ export function editCard(input, cardId) {
       .then(res => {
         dispatch(getCards())
         console.log(res)
-        // dispatch({
-        //     type: 'EDIT_CARD',
-        //     payload: {input, cardId},
-        //   }, getCards()
-        // )
       })
       .catch((err) => {
         console.log('NOT EDITED')
