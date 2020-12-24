@@ -97,6 +97,7 @@ export function moveCard(newStatus, cardId) {
 }
 
 export function changePriority(value, cardId) {
+
   return (dispatch) => {
     axios.patch(`https://nazarov-kanban-server.herokuapp.com/card/${cardId}`, {priority: value})
       .then(res => {
