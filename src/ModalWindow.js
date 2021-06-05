@@ -4,7 +4,6 @@ import {deleteCard, editCard, moveCard, changePriority} from "./redux/action";
 import {connect} from "react-redux";
 
 function ModalWindow(props) {
-
   const {card} = props;
 
   const initColumns = [
@@ -36,7 +35,6 @@ function ModalWindow(props) {
     const changeStatus = (currentStatus, value) => {
       return initColumns[initColumns.indexOf(currentStatus) + value];
     }
-
     props.moveCard(changeStatus(status, value), card._id)
     toggle()
   }
@@ -44,7 +42,6 @@ function ModalWindow(props) {
   const priorityButtonHandler = (cardId, value) => {
     props.changePriority(card.priority + value, cardId)
     toggle()
-
   }
 
   return (

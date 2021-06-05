@@ -4,7 +4,6 @@ import {useState} from "react";
 import {Button, Col, Input, Row} from "reactstrap";
 
 function AddCard(props) {
-
   const [inputValue, setInputValue] = useState('');
 
   const addButtonHandler = () => {

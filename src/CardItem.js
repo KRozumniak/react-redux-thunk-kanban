@@ -4,7 +4,6 @@ import {deleteCard, editCard} from "./redux/action";
 import ModalWindow from "./ModalWindow";
 
 function CardItem(props) {
-
   const {card} = props;
 
   return (

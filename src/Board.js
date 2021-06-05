@@ -5,7 +5,6 @@ import {connect} from "react-redux";
 import {useEffect} from "react";
 
 function Board(props) {
-
   const {cards = [], columns = []} = props;
 
   useEffect(() => {
@@ -35,7 +34,6 @@ const mapDispatchToProps = (dispatch) => ({
   getColumns: () => dispatch(getColumns()),
   getCards: () => dispatch(getCards()),
   addCard: (input) => dispatch(addCard(input))
-
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);
