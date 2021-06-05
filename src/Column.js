@@ -2,7 +2,6 @@ import {Col} from "reactstrap";
 import CardItem from "./CardItem";
 
 function Column(props) {
-
   const {cards, column} = props;
 
   return (

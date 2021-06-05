@@ -4,7 +4,6 @@ import Board from "./Board";
 import AddCard from "./AddCard";
 
 function App() {
-
   return (
     <Container>
         <AddCard />
