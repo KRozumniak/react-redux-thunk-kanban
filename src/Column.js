@@ -1,7 +1,7 @@
 import {Col} from "reactstrap";
 import CardItem from "./CardItem";
 
-function Column(props) {
+export default function Column(props) {
   const {cards, column} = props;
 
   return (
@@ -18,5 +18,3 @@ function Column(props) {
     </Col>
   );
 }
-
-export default Column;
